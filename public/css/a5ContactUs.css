@@ -1,0 +1,110 @@
+body {
+    background-image: url('bg3a.jpg');
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+
+header {
+    background: transparent;
+    text-align: center;
+}
+
+nav {
+    padding: 8px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 0px;
+
+}
+
+nav ul li {
+    display: inline-block;
+
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+}
+
+aside {
+    width: 10%;
+    float: left;
+    /*width:190px; */
+    color: white;
+    margin-left: 15px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    background: transparent;
+
+
+}
+
+
+.main {
+    float: left;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 80%;
+    padding-bottom: 10px;
+    padding-top: 25px;
+    display: inline-flex;
+    color: white;
+    flex-direction: column;
+
+}
+
+
+footer {
+    clear: both;
+    background: transparent;
+    color: white;
+    padding: 10px;
+}
+
+footer h2 {
+    margin: 0px;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 0 5px;
+}
+
+form {
+    background: rgba(226, 231, 226, 0.9);
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.asterisk {
+    color: rgb(228, 22, 22);
+}
+
+.label {
+    display: inline-block;
+    width: 5em;
+    padding: 0px 0.5em;
+    text-align: right;
+}
+
+span {
+    color: rgb(251, 6, 6);
+    font-size: 15px;
+}

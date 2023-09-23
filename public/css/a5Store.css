@@ -1,0 +1,473 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+
+    font-family: 'Google Sans Regular', sans-serif;
+    box-sizing: border-box;
+}
+
+/* color pallet for our website */
+:root {
+    --blue: #2A418B;
+    --darkblue: #070f28;
+    --green: #7ECC30;
+    --darkgreen: #408100;
+}
+
+
+/* header {
+    background: rgb(207, 5, 5);
+    text-align: center;
+
+}
+
+nav {
+    padding: 8px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 0px;
+
+}
+
+nav ul li {
+    display: inline-block;
+
+}
+
+nav ul li a {
+
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 0.5em;
+    transition: ease-in-out 0.3s;
+    text-decoration: none;
+    padding: 0.3em;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+} */
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    background-color: var(--darkblue);
+}
+
+
+.logo {
+    padding: 0.9em 0em 0.6em 1.5em;
+    text-align: center;
+}
+
+.logo img {
+    height: 5rem;
+    width: 5rem;
+
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0 1em;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    padding: .5em;
+    font-size: 1.1rem;
+    color: white;
+
+}
+
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: white;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+
+.nav-links li a:hover::after {
+    width: 80%;
+}
+
+/*Styling Buttons*/
+.login-button {
+    color: white;
+    background-color: transparent;
+    border: 1.5px solid #cdcfd0;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2em;
+    margin-right: 1em;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    color: white;
+    background-color: var(--blue);
+    border: 1.5px solid #2A418B;
+    transition: all ease-in-out 350ms;
+}
+
+.join-button {
+    color: white;
+    background-color: transparent;
+    border: 1.5px solid #cdcfd0;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.join-button:hover {
+    color: white;
+    background-color: var(--green);
+    border: 1.5px solid #408100;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 750px) {
+    nav {
+
+        z-index: 3;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 7%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: var(--darkblue);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links li a {
+        color: white;
+    }
+
+    .nav-links li a:hover {
+
+        color: white;
+        transition: 0.3s ease;
+    }
+
+    .nav-links li a::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 0%;
+        background-color: white;
+        position: absolute;
+        transition: all ease-in-out 250ms;
+        margin: 0 0 0 10%;
+    }
+
+    .nav-links li a:hover::after {
+        width: 80%;
+    }
+
+    .login-button {
+        color: white;
+        margin: 0;
+    }
+
+    .login-button:hover {
+        color: white;
+        background-color: var(--blue);
+        border: 1.5px solid #2A418B;
+        transition: all ease-in-out 350ms;
+    }
+
+    .join-button {
+        color: white;
+    }
+
+    .join-button:hover {
+        color: white;
+        background-color: var(--green);
+        border: 1.5px solid #7ECC30;
+        transition: all ease-in-out 350ms;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+
+    li.fade {
+        opacity: 1;
+    }
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+aside {
+    width: 10%;
+    float: left;
+    /*width:190px; */
+    color: white;
+    margin-left: 15px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    background: transparent;
+}
+
+body {
+    background-image: url("bg9a.jpg");
+}
+
+.main {
+    float: left;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 65%;
+    padding-bottom: 10px;
+    padding-top: 50px;
+    display: inline-flex;
+    color: white;
+}
+
+header img {
+    width: 80px;
+    height: 80px;
+}
+
+.aside img,
+.main img,
+.ads img {
+    width: 100%;
+}
+
+.ads {
+    width: 15%;
+    float: left;
+    color: white;
+    background: transparent;
+    padding: 10px 20px;
+
+}
+
+footer {
+    clear: both;
+    background: transparent;
+    color: white;
+    padding: 10px;
+}
+
+footer h2 {
+    margin: 0px;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 0 5px;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 10px 50px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.733);
+}
+
+/* Add some padding inside the card container */
+.cardcontainer {
+    padding: 2px 16px;
+    background-color: var(--darkblue);
+
+}
+
+.price {
+    background-color: rgb(113, 185, 4);
+    text-align: center;
+}
+
+a {
+    color: white;
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    transition: ease-in 0.18s;
+}
+
+
+.adscard {
+    /* Add shadows to create the "card" effect */
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 10px 50px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.adscard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.733);
+}
+
+/* Add some padding inside the card container */
+.adscardcontainer {
+    padding: 2px 16px;
+    background-color: var(--darkblue);
+
+}
+
+.asidecard {
+    /* Add shadows to create the "card" effect */
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 10px 50px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.asidecard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.733);
+}
+
+/* Add some padding inside the card container */
+.asidecardcontainer {
+    padding: 2px 16px;
+    background-color: var(--darkblue);
+
+}
+
+.fa:hover {
+    opacity: 0.9;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-pinterest {
+    background: #cb2027;
+    color: white;
+}
+
+.fa-reddit {
+    background: #ff5700;
+    color: white;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 40px;
+    width: 30px;
+    text-decoration: none;
+    margin: 5px 10px;
+}
+
+h1 {
+    color: green;
+}
