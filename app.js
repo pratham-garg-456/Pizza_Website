@@ -1,13 +1,3 @@
-/********************************************************************************* 
-*  WEB322 – Assignment 5 
-*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.   
-*  No part of this assignment has been copied manually or electronically from any other source 
-*  (including web sites) or distributed to other students. 
-*  
-*  Name: ______Pratham Garg________________ Student ID: ___117900217___________ Date: ____12-12-2022____________
-********************************************************************************/
-
-
 const express = require('express')
 
 const app = express()
